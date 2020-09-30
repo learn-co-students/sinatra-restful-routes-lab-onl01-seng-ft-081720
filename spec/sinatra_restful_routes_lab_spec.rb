@@ -109,7 +109,7 @@ describe "Recipe App" do
       fill_in :cook_time, :with => "20 minutes"
 
       page.find(:css, "[type=submit]").click
-
+# binding.pry
       expect(page).to have_content("Enchiladas con Salsa Verde")
       expect(page).to have_content("Tortillas, Queso Blanco, Tomatillos, Onion, Garlic, Black beans, Cilantro")
       expect(page).to have_content("20 minutes")
