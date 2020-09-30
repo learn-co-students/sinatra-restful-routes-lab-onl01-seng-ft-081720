@@ -152,10 +152,12 @@ describe "Recipe App" do
       fill_in :ingredients, :with => "chocolate chips, flour, sugar, butter, cocoa powder"
       fill_in :cook_time, :with => "30 minutes"
 
-      page.find(:css, "[type=submit]").click
+      page.find(:css, "[id=submit]").click
+
     end
 
     it "updates the recipe" do
+      # binding.pry
       expect(page).to have_content("Double chocolate chip cookies")
       expect(page).to have_content("chocolate chips, flour, sugar, butter, cocoa powder")
       expect(page).to have_content("30 minutes")

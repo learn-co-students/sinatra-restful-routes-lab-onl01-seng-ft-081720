@@ -23,6 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/recipes/:id/edit" do
+    # binding.pry
     @recipe = Recipe.find(params[:id])
     erb :edit
   end
@@ -34,12 +35,11 @@ class ApplicationController < Sinatra::Base
     # erb :new
   end
 
-
   patch "/recipes/:id" do
     # binding.pry
     @recipe = recipe.find(params[:id])
     @recipe.update(params[:recipe])
-    redirect to "/recipes/#{ @recipe.id }"
+    redirect to "/recipes/#{@recipe.id}"
   end
 
   delete '/recipes/:id' do 
