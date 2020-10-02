@@ -1,0 +1,14 @@
+<% require 'pry' %>
+<DOCTYPE! html>
+    <head>
+        <title>List of Recipes</title>
+    </head>
+    <body>
+        <h1>List of Recipes</h1>
+        <% @recipes.each do |r| %>
+            <h2><a href="/recipes/<%= r.id %>"><%= r.name %></a></h2>
+            <p><%= r.ingredients %></p>
+            <p><%= r.cook_time %></p>
+        <% end %>
+    </body>
+</html>
